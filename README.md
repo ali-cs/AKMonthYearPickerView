@@ -1,3 +1,8 @@
+<p align="center" >
+  <img src="AKMonthYearPickerViewMain.png" title="AKMonthYearPickerViewMain logo" float=left>
+  <img src="AKMonthYearPickerView.png" title="AKMonthYearPickerView logo" float=right>
+</p>
+
 # AKMonthYearPickerView
 
 AKMonthYearPickerView is a lightweight, clean and easy-to-use Month/ year picker control in iOS written purely in Swift language.
@@ -32,8 +37,7 @@ You can use this library in your project using pods or manually importing the li
 ```
 import AKMonthYearPickerView
 
-        
-        AKMonthYearPickerView.sharedInstance.show(vc: vc, doneHandler: doneHandler, completetionalHandler: completetionalHandler)
+AKMonthYearPickerView.sharedInstance.show(vc: vc, doneHandler: doneHandler, completetionalHandler: completetionalHandler)
 
 ```
 
@@ -42,9 +46,9 @@ import AKMonthYearPickerView
 You can also customize the toolbar color.
 
 ```
-        AKMonthYearPickerView.sharedInstance.barTintColor = Constants.ColorConstants.greenColor.withAlphaComponent(0.5)
+AKMonthYearPickerView.sharedInstance.barTintColor =   UIColor.blue
 
-        AKMonthYearPickerView.sharedInstance.previousYear = 4
+AKMonthYearPickerView.sharedInstance.previousYear = 4
 
 ```
 

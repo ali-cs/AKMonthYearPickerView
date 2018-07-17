@@ -7,8 +7,8 @@
 //
 
 /*
- AKMonthYearPickerView is a lightweight, clean and easy-to-use Month picker control in iOS written in Swift language.
- https://github.com/ali-cs/AKMonthYearPickerView
+    AKMonthYearPickerView is a lightweight, clean and easy-to-use Month picker control in iOS written in Swift language.
+    https://github.com/ali-cs/AKMonthYearPickerView
  */
 
 import Foundation
