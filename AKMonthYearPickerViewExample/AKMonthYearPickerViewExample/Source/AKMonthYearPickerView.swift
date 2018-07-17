@@ -1,14 +1,14 @@
 //
 //  AKMonthYearPickerView.swift
-//  AUXO
+//  AKMonthYearPickerView
 //
 //  Created by Ali Khan on 11/Jul/18.
-//  Copyright © 2018 Telenor. All rights reserved.
+//  Copyright © 2018 Ali Khan. All rights reserved.
 //
 
 /*
-    AKMonthYearPickerView is a lightweight, clean and easy-to-use Month picker control in iOS written in Swift language.
-    https://github.com/ali-cs/AKMonthYearPickerView
+ AKMonthYearPickerView is a lightweight, clean and easy-to-use Month picker control in iOS written in Swift language.
+ https://github.com/ali-cs/AKMonthYearPickerView
  */
 
 import Foundation
@@ -28,7 +28,7 @@ struct AKMonthYearPickerConstants {
     }
 }
 
-class AKMonthYearPickerView: UIView {
+public class AKMonthYearPickerView: UIView {
     
     //MARK:- Variables
     

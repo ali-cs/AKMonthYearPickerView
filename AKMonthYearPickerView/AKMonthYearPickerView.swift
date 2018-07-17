@@ -28,7 +28,7 @@ struct AKMonthYearPickerConstants {
     }
 }
 
-class AKMonthYearPickerView: UIView {
+public class AKMonthYearPickerView: UIView {
     
     //MARK:- Variables
     
