@@ -1,9 +1,9 @@
 //
 //  AKMonthYearPickerView.swift
-//  AUXO
+//  AKMonthYearPickerView
 //
 //  Created by Ali Khan on 11/Jul/18.
-//  Copyright © 2018 Telenor. All rights reserved.
+//  Copyright © 2018 Ali Khan. All rights reserved.
 //
 
 /*
