@@ -1,6 +1,5 @@
 <p align="center" >
-  <img src="AKMonthYearPickerViewMain.png" title="AKMonthYearPickerViewMain logo" float=left>
-  <img src="AKMonthYearPickerView.png" title="AKMonthYearPickerView logo" float=right>
+  <img src="AKMonthYearPickerView.png" title="AKMonthYearPickerView logo" float=left>
 </p>
 
 # AKMonthYearPickerView
