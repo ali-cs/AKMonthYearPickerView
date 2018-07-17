@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AKMonthYearPickerView'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'AKMonthYearPickerView is a lightweight, clean and easy-to-use Month/ year picker control in iOS written purely in Swift language.'
  
   s.description      = <<-DESC

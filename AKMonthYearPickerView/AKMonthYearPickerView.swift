@@ -36,8 +36,8 @@ public class AKMonthYearPickerView: UIView {
     var onDoneButtonSelected: (() -> Void)?
     
     private var monthYearPickerView : MonthYearPickerView?
-    var barTintColor                = UIColor.blue
-    var previousYear                = 2
+    public  var barTintColor        = UIColor.blue
+    public  var previousYear        = 2
     
     public static var sharedInstance   = {
         return AKMonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: (AKMonthYearPickerConstants.AppFrameSettings.screenHeight - 256) / 2), size: CGSize(width: AKMonthYearPickerConstants.AppFrameSettings.screenWidth, height: 216)))
@@ -74,7 +74,7 @@ public class AKMonthYearPickerView: UIView {
     
     //MARK:- Helper Mehtods
     
-    func show(vc: UIViewController, doneHandler: @escaping () -> (), completetionalHandler: @escaping (Int, Int) -> () ) {
+    public func show(vc: UIViewController, doneHandler: @escaping () -> (), completetionalHandler: @escaping (Int, Int) -> () ) {
         monthYearPickerView?.previousYear = previousYear
         
         monthYearPickerView?.onDateSelected = completetionalHandler
@@ -94,7 +94,7 @@ public class AKMonthYearPickerView: UIView {
         monthYearPickerView?.isHidden = false
     }
     
-    func hide() {
+    public func hide() {
         monthYearPickerView?.hide()
         
         AKMonthYearPickerView.sharedInstance.removeFromSuperview()
@@ -102,7 +102,7 @@ public class AKMonthYearPickerView: UIView {
         self.isHidden     = true
     }
     
-    func getToolBar() -> UIToolbar {
+    private func getToolBar() -> UIToolbar {
         
         let customToolbar          = UIToolbar(frame: CGRect(origin: CGPoint(x: 0, y: (AKMonthYearPickerConstants.AppFrameSettings.screenHeight - 256) / 2), size: CGSize(width: AKMonthYearPickerConstants.AppFrameSettings.screenWidth, height: 40)))
         
