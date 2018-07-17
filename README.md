@@ -5,11 +5,10 @@
 # AKMonthYearPickerView
 
 AKMonthYearPickerView is a lightweight, clean and easy-to-use Month/ year picker control in iOS written purely in Swift language.
-This library is written in Swift 4.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This month year picker view will callback when the user change month or year or user clic on done button. 
 
 ### Installing
 
@@ -58,7 +57,7 @@ AKMonthYearPickerView.sharedInstance.previousYear = 4
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.MIT](LICENSE.MIT) file for details
 
 ## Acknowledgments
 
