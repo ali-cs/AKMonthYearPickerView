@@ -68,7 +68,7 @@ public class AKMonthYearPickerView: UIView {
         monthYearPickerView?.previousYear = previousYear
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
