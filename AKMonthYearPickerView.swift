@@ -6,18 +6,26 @@
 //  Copyright © 2018 Telenor. All rights reserved.
 //
 
+/*
+ 
+    AKMonthYearPickerView is a lightweight, clean and easy-to-use Month picker control in iOS written in Swift language.
+    https://github.com/ali-cs/AKMonthYearPickerView
+ */
+
 import Foundation
 
+
 class AKMonthYearPickerView: UIView {
-
+    
     //MARK:- Variables
-
+    
     var onDateSelected: ((_ month: Int, _ year: Int) -> Void)?
     var onDoneButtonSelected: (() -> Void)?
-
+    
     private var monthYearPickerView : MonthYearPickerView?
     var barTintColor                = UIColor.blue
-
+    var previousYear                = 2
+    
     static var sharedInstance   = {
         return AKMonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: (Constants.AppFrameSettings.screenHeight - 256) / 2), size: CGSize(width: Constants.AppFrameSettings.screenWidth, height: 216)))
     }()
@@ -28,7 +36,7 @@ class AKMonthYearPickerView: UIView {
     
     convenience init() {
         let frame = CGRect(origin: CGPoint(x: 0, y: (Constants.AppFrameSettings.screenHeight - 256) / 2), size: CGSize(width: Constants.AppFrameSettings.screenWidth, height: 216))
-
+        
         self.init(frame: frame)
     }
     
@@ -38,11 +46,13 @@ class AKMonthYearPickerView: UIView {
         backgroundColor     = UIColor.white
         
         layer.borderColor   = UIColor(red: 212.0/255.0, green: 212.0/255.0, blue: 212.0/255.0, alpha: 1.0).cgColor
+        
         layer.borderWidth   = 1.0
         layer.cornerRadius  = 7.0
         layer.masksToBounds = true
         
         monthYearPickerView = MonthYearPickerView(frame: CGRect(x: frame.origin.x, y: frame.origin.y+40, width: frame.size.width, height: frame.size.height))
+        monthYearPickerView?.previousYear = previousYear
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,8 +60,10 @@ class AKMonthYearPickerView: UIView {
     }
     
     //MARK:- Helper Mehtods
-
+    
     func show(vc: UIViewController, doneHandler: @escaping () -> (), completetionalHandler: @escaping (Int, Int) -> () ) {
+        monthYearPickerView?.previousYear = previousYear
+        
         monthYearPickerView?.onDateSelected = completetionalHandler
         onDoneButtonSelected = doneHandler
         
@@ -78,9 +90,9 @@ class AKMonthYearPickerView: UIView {
     }
     
     func getToolBar() -> UIToolbar {
-
+        
         let customToolbar          = UIToolbar(frame: CGRect(origin: CGPoint(x: 0, y: (Constants.AppFrameSettings.screenHeight - 256) / 2), size: CGSize(width: Constants.AppFrameSettings.screenWidth, height: 40)))
-
+        
         customToolbar.barStyle     = .blackTranslucent
         customToolbar.barTintColor = barTintColor
         customToolbar.tintColor    = UIColor.white
@@ -91,7 +103,7 @@ class AKMonthYearPickerView: UIView {
     
     private func embedButtons(_ toolbar: UIToolbar) {
         let flexButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-
+        
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.donePressed(_:)))
         
         toolbar.setItems([ flexButton, flexButton, flexButton, doneButton], animated: true)
@@ -108,8 +120,9 @@ private class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerV
     
     //MARK:- Variables
     
-    var months: [String]!
-    var years: [Int]!
+    var months          : [String]!
+    var years           : [Int]!
+    var previousYear    = 2
     
     var month = Calendar.current.component(.month, from: Date()) {
         didSet {
@@ -149,6 +162,8 @@ private class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerV
     func show(vc: UIViewController, completetionalHandler: @escaping (Int, Int) -> () ) {
         
         MonthYearPickerView.sharedInstance.onDateSelected = completetionalHandler
+        commonSetup()
+        
         vc.view.addSubview(MonthYearPickerView.sharedInstance)
     }
     
@@ -162,7 +177,7 @@ private class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerV
         var years: [Int] = []
         if years.count == 0 {
             var year = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.year, from: NSDate() as Date)
-            for _ in 1...2 {
+            for _ in 1...previousYear {
                 years.append(year)
                 year -= 1
             }
@@ -224,5 +239,5 @@ private class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerV
         self.month = month
         self.year = year
     }
-
+    
 }
