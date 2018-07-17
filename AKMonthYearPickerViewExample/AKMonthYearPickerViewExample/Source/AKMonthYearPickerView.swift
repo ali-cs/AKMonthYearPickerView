@@ -39,7 +39,7 @@ public class AKMonthYearPickerView: UIView {
     var barTintColor                = UIColor.blue
     var previousYear                = 2
     
-    static var sharedInstance   = {
+    public static var sharedInstance   = {
         return AKMonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: (AKMonthYearPickerConstants.AppFrameSettings.screenHeight - 256) / 2), size: CGSize(width: AKMonthYearPickerConstants.AppFrameSettings.screenWidth, height: 216)))
     }()
     
