@@ -1,6 +1,5 @@
-<p align="center" >
-  <img src="AKMonthYearPickerView.png" title="AKMonthYearPickerView logo" float=left>
-</p>
+
+![AKMonthYearPickerView-gif](https://github.com/ali-cs/AKMonthYearPickerView/blob/master/AKMonthYearPickerView.gif)
 
 # AKMonthYearPickerView
 
