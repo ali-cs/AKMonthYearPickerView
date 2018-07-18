@@ -8,7 +8,7 @@ AKMonthYearPickerView is a lightweight, clean and easy-to-use Month/ year picker
 
 ## Getting Started
 
-This month year picker view will callback when the user change month or year or user clic on done button. 
+This month year picker view will callback when the user change month or year or user tap on done button. 
 
 ### Installing
 
